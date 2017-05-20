@@ -49,11 +49,12 @@ public class Controller extends HttpServlet {
         }
         
         if (action.equals("Pregunta")){
-            
+
         } else if (action.equals("")){
-            address = "/Error.jsp";
-            dbTool.test();
-        }
+            Usuario usuario = dbTool.getUsuario(1);
+            request.setAttribute("usuario", usuario);
+            address = "/Pregunta.jsp";
+        }   
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);
         dispatcher.forward(request, response);
@@ -63,6 +64,7 @@ public class Controller extends HttpServlet {
     /**
      * Handles the HTTP <code>GET</code> method.
      *
+     * 
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs

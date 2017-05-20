@@ -22,7 +22,7 @@ public class Usuario {
     PuntajeUsuario	entero
     PopulUsuario	entero */
     
-    private String IdUsuario;
+    private int IdUsuario;
     private String claveUsuario;
     private String nombreUsuario;
     private String Universidad;
@@ -32,11 +32,11 @@ public class Usuario {
     private int PuntajeUsuario;
     private int PopulUsuario;
 
-    public String getIdUsuario() {
+    public int getIdUsuario() {
         return IdUsuario;
     }
 
-    public void setIdUsuario(String IdUsuario) {
+    public void setIdUsuario(int IdUsuario) {
         this.IdUsuario = IdUsuario;
     }
 
