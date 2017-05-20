@@ -47,7 +47,7 @@ public class Controller extends HttpServlet {
         if (action.equals("Pregunta")){
             
         } else if (action.equals("")){
-            address = "/Test.jsp";
+            address = "/Error.jsp";
         }
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);
