@@ -7,10 +7,12 @@ package classes;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -29,6 +31,28 @@ public class Controller extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        DBUtil dbTool = new DBUtil();
+        Util Toolkit = new Util();
+        HttpSession session = request.getSession();
+        session.setMaxInactiveInterval(300);
+        
+        String address = "";
+        String action = request.getParameter("action");
+        
+        if (action == null){
+            action = "";
+        }
+        
+        if (action.equals("Pregunta")){
+            
+        } else if (action.equals("")){
+            address = "/Test.jsp";
+        }
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+        dispatcher.forward(request, response);
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
